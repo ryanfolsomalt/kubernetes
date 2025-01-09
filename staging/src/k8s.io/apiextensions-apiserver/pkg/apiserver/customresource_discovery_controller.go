@@ -320,8 +320,7 @@ func (c *DiscoveryController) Run(stopCh <-chan struct{}, synchedCh chan<- struc
 			utilruntime.HandleError(fmt.Errorf("timed out waiting for initial discovery sync"))
 			return
 		}
-		utilruntime.HandleError(fmt.Errorf("unexpected error: %w", err))
-		return
+		panic(fmt.Errorf("unexpected error: %v", err))
 	}
 	close(synchedCh)
 

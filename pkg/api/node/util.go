@@ -73,7 +73,7 @@ func GetWarningsForNodeSelector(nodeSelector *metav1.LabelSelector, fieldPath *f
 			warnings = append(
 				warnings,
 				fmt.Sprintf(
-					"%s: %s is %s",
+					"%s: %s %s is %s",
 					fieldPath.Child("matchExpressions").Index(i).Child("key"),
 					expression.Key,
 					msg,
